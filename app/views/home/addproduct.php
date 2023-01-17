@@ -14,6 +14,9 @@
                 <div class="col">
                     <input type="number" name="price[]" class="form-control" placeholder="price" aria-label="Last name">
                 </div>
+                <div class="col">
+                    <input type="file" name="picProcuct[]" class="form-control" placeholder="price" aria-label="Last name">
+                </div>
             </div>
         </div>
         <button type="button" id="onemore" class="btn border">ONE MORE</button>

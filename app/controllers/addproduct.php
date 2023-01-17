@@ -6,10 +6,12 @@ class addproduct extends controller
         $this->model('Database');
         $this->view('addproduct');
         if (isset($_POST['btn'])) {
-            var_dump($_POST['libelle']);
-            echo "abdo";
+            // for
+            for ($i = 0; $i < count($_FILES['picProcuct'][]);$i++){
+                echo "+";
+            } 
             $addproduct = $this->model('crud');
-            $addproduct->addproduct($_POST['libelle'], $_POST['description'], $_POST['price']);
+            $addproduct->addproduct($_POST['libelle'], $_POST['description'], $_POST['price'],$_FILES['picProcuct']);
             // header('location: ./productlist');
         }
     }
