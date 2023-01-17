@@ -11,15 +11,7 @@
                             <h5 class="card-title"><?= $produit['libelle'] ?></h5>
                             <p class="card-text"><?= $produit['description'] ?></p>
                             <a href="./details?id=<?= $produit['IdPrd'] ?>" class="btn m-4">See Details</a>
-                            <br>
-                            <?php
-                            if (isset($_SESSION["TYPEACC"]) && $_SESSION["TYPEACC"] == 'admin') {
-                            ?>
-                                <a href="./Delete?id=<?= $produit['IdPrd'] ?>" class="btn p-1" style="background-color: #d9534f;">Delete</a>
-                                <a href="./editproduct?id=<?= $produit['IdPrd'] ?>" class="btn p-1" style="background-color: #337ab7;">Edit</a>
-                            <?php
-                            }
-                            ?>
+                            
                         </div>
                     </div>
                 </div>

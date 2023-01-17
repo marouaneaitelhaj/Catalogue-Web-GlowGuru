@@ -4,16 +4,13 @@ class addproduct extends controller
     public function __construct()
     {
         $this->model('Database');
-        $read = $this->model('crud');
-        $read->readCatégorie();
-        $this->view('addproduct', ['query' => $read->query]);
+        $this->view('addproduct');
         if (isset($_POST['btn'])) {
-            $target_dir = "../uploads/";
-            $target_file = $target_dir . basename($_FILES["productPic"]["name"]);
-            move_uploaded_file($_FILES["productPic"]["tmp_name"], $target_file);
+            var_dump($_POST['libelle']);
+            echo "abdo";
             $addproduct = $this->model('crud');
-            $addproduct->addproduct($_POST['libelle'],   $_POST['prixdachat'], $_POST['prixfinal'], $_POST['Prixoffre'], $_POST['description'], $_POST['catégorie'], $_FILES['productPic']);
-            header('location: ./productlist');
+            $addproduct->addproduct($_POST['libelle'], $_POST['description'], $_POST['price']);
+            // header('location: ./productlist');
         }
     }
 }

@@ -30,6 +30,6 @@ class controller
         require_once '../app/views/home/header.php';
         require_once '../app/views/home/' . $view . '.php';
         require_once '../app/views/home/footer.php';
-        require_once '../app/views/home/main/main.js';
+        // require_once '../app/views/home/main/main.js';
     }
 }

@@ -43,7 +43,7 @@
     <div class="w-25 justify-content-around d-flex align-items-center">
       <!-- Icon -->
       <?php
-      if (!isset($_SESSION["TYPEACC"])) {
+      if (!isset($_SESSION["email"])) {
       ?>
         <a href="login">
           <i class="fa fa-sign-in" aria-hidden="true"></i>
@@ -52,30 +52,22 @@
       }
       ?>
       <?php
-      if (isset($_SESSION["TYPEACC"])) {
+      if (isset($_SESSION["email"])) {
       ?>
-        <style>
-          :root {
-            --main-color: black;
-          }
-        </style>
+        
         <a href="addproduct">
-          <i class="fa-solid fa-p"></i>
+        <i class="fas fa-plus-circle"></i>
         </a>
-        <a href="addcategory">
-          <i class="fa-solid fa-c"></i>
+        <a href="tableproduct">
+        <i class="fas fa-edit"></i>
         </a>
       <?php
       }
       ?>
       <?php
-      if (isset($_SESSION["TYPEACC"])) {
+      if (isset($_SESSION["email"])) {
       ?>
-        <style>
-          :root {
-            --main-color: black;
-          }
-        </style>
+        
         <?php
       if (isset($_GET["id"])) {
       ?>
@@ -84,30 +76,12 @@
           }
           ?>
 
-        <!-- Notifications -->
-        <div class="dropdown">
-          <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-bell"></i>
-            <span class="badge rounded-pill badge-notification bg-danger">1</span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-            <li>
-              <a class="dropdown-item" href="#">Some news</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Another news</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </li>
-          </ul>
-        </div>
       <?php
       }
       ?>
       <!-- Avatar -->
       <?php
-      if (isset($_SESSION["TYPEACC"])) {
+      if (isset($_SESSION["email"])) {
       ?>
         <div class="dropdown">
           <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">

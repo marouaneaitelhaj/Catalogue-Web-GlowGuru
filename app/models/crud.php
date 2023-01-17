@@ -7,15 +7,22 @@ use function PHPSTORM_META\sql_injection_subst;
 class crud extends Database
 {
     public $query;
-    public function addproduct($value1, $value3, $value4, $value5, $value6, $value7, $value8)
+    public function addproduct($value1, $value3, $value4)
     {
-        $image = $value8["name"];
-        $sql = "INSERT INTO produit (libelle, prixdachat, prixfinal, Prixoffre, description, catégorie,picProcuct) VALUES ('$value1','$value3','$value4','$value5','$value6','$value7','$image');";
+        // echo $value1;
+        // print_r($value1);
+        for($i=0;$i<count($value3);$i++){
+        // $image = $value8["name"];
+        $sql = "INSERT INTO produit (libelle, description,Price) VALUES
+        ('$value1[$i]','$value3[$i]','$value4[$i]');";
         mysqli_query($this->conn, $sql);
+        var_dump($sql);
+        }
+        // var_dump($value1);
     }
     public function productlist()
     {
-        $this->query = mysqli_query($this->conn, "SELECT * FROM produit");
+        $this->query = mysqli_query($this->conn, "SELECT * FROM produit ORDER BY RAND()");
     }
     public function suggestion()
     {
@@ -37,13 +44,13 @@ class crud extends Database
         $idprd = mysqli_real_escape_string($this->conn, $_GET['id']);
         if (!$value7["size"] == 0) {
             $image = $value7["name"];
-            $sql = "UPDATE produit SET libelle='$value1', prixdachat='$value2', prixfinal='$value3', Prixoffre='$value4',description='$value5', picProcuct='$image' where IdPrd='$idprd' ;";
+            $sql = "UPDATE produit SET libelle='$value1',description='$value5', picProcuct='$image' where IdPrd='$idprd' ;";
         } else {
-            $sql = "UPDATE produit SET libelle='$value1', prixdachat='$value2', prixfinal='$value3', Prixoffre='$value4',description='$value5'  where IdPrd='$idprd';";
+            $sql = "UPDATE produit SET libelle='$value1',description='$value5'  where IdPrd='$idprd';";
         }
         mysqli_query($this->conn, $sql);
 
-        header('location: ./productlist');
+        header('location: ./newArrivals');
     }
     public function signup($value1, $value2, $value3, $value4)
     {
@@ -125,4 +132,5 @@ class crud extends Database
         $sql = "DELETE FROM commande where id='$value1';";
         mysqli_query($this->conn, $sql);
     }
+
 }

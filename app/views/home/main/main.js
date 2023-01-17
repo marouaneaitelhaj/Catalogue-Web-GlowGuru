@@ -1,40 +1,5 @@
-<script>
-  $(document).ready(function() {
-    $("#select").change(function() {
-      var selectedOption = $(this).val();
-      if (selectedOption == 0) {
-        $.ajax({
-          url: "/electro-Maroc/public/productlist",
-          beforeSend: function() {
-            document.querySelector(".container").innerHTML = "<div class='spinner-border' role='status'><span class='sr-only'>Loading...</span></div>";
-          },
-          success: function(data) {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(data, "text/html");
-            // console.log(doc.querySelector(".container"));
-            document.querySelector(".container").innerHTML = "";
-            document.querySelector(".container").appendChild(doc.querySelector(".container"));
-          }
-        });
-      } else {
-        $.ajax({
-          url: "/electro-Maroc/public/productlist?cat=" + selectedOption,
-          beforeSend: function() {
-            document.querySelector(".container").innerHTML = "<div class='spinner-border' role='status'><span class='sr-only'>Loading...</span></div>";
-            setTimeout(function() {
-              // Add any additional code you want to run after the delay here
-            }, 2000);
-          },
-          success: function(data) {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(data, "text/html");
-            // console.log(doc.querySelector(".container"));
-            document.querySelector(".container").innerHTML = "";
-            document.querySelector(".container").appendChild(doc.querySelector(".container"));
-          }
-        });
-      }
-
-    });
-  });
-</script>
+document.querySelector("#onemore").addEventListener('click', function () {
+  var div = document.createElement("div");
+  div.innerHTML = '<div class="row mt-4"> <div class="col"> <input type="text" class="form-control" name="libelle[]" placeholder="Name" aria-label="First name"> </div> <div class="col"> <textarea type="text" name="description[]" class="form-control" placeholder="Description" aria-label="Last name"></textarea> </div> <div class="col"> <input type="number" name="price[]" class="form-control" placeholder="price" aria-label="Last name"> </div> </div>';
+  document.querySelector("#bigdiv").appendChild(div);
+})

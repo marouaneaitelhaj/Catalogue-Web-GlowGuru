@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Sofia');
 *{
-    font-family: 'Sofia', sans-serif;
+    /* font-family: 'Sofia', sans-serif; */
     color: #E7183B;
 }
 :root {
@@ -56,4 +56,16 @@ i{
     body > div > div.row.align-items-center > div:nth-child(2){
         margin: 100px;
     }
+}
+#hiddendiv{
+    visibility: hidden;
+}
+#hiddendiv.mama{
+    visibility: visible;
+}
+#bigdiv > div.row{
+    visibility: visible;
+}
+#bigdiv > div.row.mama{
+    visibility: hidden;
 }

@@ -4,8 +4,6 @@ class editproduct extends controller
     public function __construct()
     {
         $this->model('Database');
-        $read = $this->model('crud');
-        $read->readCatégorie();
         $this->model('Database');
         $details = $this->model('crud');
         $details->details();

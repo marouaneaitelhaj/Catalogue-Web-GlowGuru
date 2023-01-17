@@ -55,16 +55,9 @@
                 <div class="row align-items-center">
                     <div class="col">
                         <h1 class="m-4"><?= $produit['libelle'] ?></h1>
-                        <span class="m-4 fw-bold">Prix final :</span>
-                        <span style="text-decoration: line-through;color:#FF0000;"><?= $produit['prixfinal'] ?>$</span>
-                        <br>
-                        <span class="m-4 fw-bold">Prix offre :</span>
-                        <span style="color:var(--main-bg-color);" class=""><?= $produit['Prixoffre'] ?>$</span>
-                        <br>
-                        <input name="quan" value="0" class="w-25 border m-4" type="number">
                         <p class="p-4 pt-0"><?= $produit['description'] ?></p>
 
-                        <button type="submit" name="btn" class="m-4 btn-lg btn-block btn">add to cart</button>
+                        <!-- <button type="submit" name="btn" class="m-4 btn-lg btn-block btn">add to cart</button> -->
 </form>
 </div>
 <div class="col">
