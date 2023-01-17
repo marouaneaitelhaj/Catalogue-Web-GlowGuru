@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+*{
+    font-family: 'Sofia', sans-serif;
+    color: #E7183B;
+}
+:root {
+    --main-color: #FFF1F1;
+}
+.ds{
+    color: #E7183B;
+}
+.container{
+    text-align: center;
+    width: 100%;
+    min-height: 85vh;
+    
+}
+.shopping-cart {
+    display: none;
+  }
+.card{
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+body > div > div.row > div:nth-child(1) > h1 > span:nth-child(2){
+    font-weight: Thin;
+}
+.btn{
+    color: #E7183B;
+    background-color: var(--main-color);
+}
+.btn:hover{
+    color: var(--main-color);
+    background-color: #E7183B;
+}
+nav{
+    background-color: var(--main-color);
+}
+i{
+    color: #E7183B;
+}
+.wi{
+    font-weight: bolder;
+    color: black;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: #E7183B;
+}
+@media screen and (max-width: 992px) {
+    body > div > div.row.align-items-center > div:nth-child(1){
+        display: none;
+    }
+    body > div > div.row.align-items-center > div:nth-child(2){
+        margin: 100px;
+    }
+}
