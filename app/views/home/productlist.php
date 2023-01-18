@@ -1,3 +1,4 @@
+
 <div class="container" id="container">
     <div class="d-flex justify-content-around flex-wrap">
         <?php
@@ -11,7 +12,7 @@
                             <h5 class="card-title"><?= $produit['libelle'] ?></h5>
                             <p class="card-text"><?= $produit['description'] ?></p>
                             <a href="./details?id=<?= $produit['IdPrd'] ?>" class="btn m-4">See Details</a>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -25,3 +26,4 @@
     </div>
 
 </div>
+<script src="../app/views/home/main/searsh.js"></script>

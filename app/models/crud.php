@@ -7,16 +7,15 @@ use function PHPSTORM_META\sql_injection_subst;
 class crud extends Database
 {
     public $query;
-    public function addproduct($value1, $value3, $value4)
+    public function addproduct($value1, $value3, $value4, $value8)
     {
         // echo $value1;
         // print_r($value1);
-        for($i=0;$i<count($value3);$i++){
-        // $image = $value8["name"];
-        $sql = "INSERT INTO produit (libelle, description,Price) VALUES
-        ('$value1[$i]','$value3[$i]','$value4[$i]');";
-        mysqli_query($this->conn, $sql);
-        var_dump($sql);
+        for ($i = 0; $i < count($value3); $i++) {
+            $image = $value8["name"][$i];
+            $sql = "INSERT INTO produit (libelle, description,Price,picProcuct) VALUES
+        ('$value1[$i]','$value3[$i]','$value4[$i]','$image');";
+            mysqli_query($this->conn, $sql);
         }
         // var_dump($value1);
     }
@@ -24,9 +23,14 @@ class crud extends Database
     {
         $this->query = mysqli_query($this->conn, "SELECT * FROM produit ORDER BY RAND()");
     }
+
     public function suggestion()
     {
         $this->query = mysqli_query($this->conn, 'SELECT * FROM produit ORDER BY RAND() LIMIT 3;');
+    }
+    public function cover()
+    {
+        $this->query = mysqli_query($this->conn, 'SELECT * FROM produit ORDER BY RAND() LIMIT 1;');
     }
     public function details()
     {
@@ -52,10 +56,16 @@ class crud extends Database
 
         header('location: ./newArrivals');
     }
-    public function signup($value1, $value2, $value3, $value4)
+    public function dashboard(){
+        $sql = 'SELECT COUNT(*) FROM `produit`;';
+        $count = mysqli_query($this->conn, $sql);
+        $sql = 'SELECT SUM(`Price`) FROM `produit`;';
+        $total = mysqli_query($this->conn, $sql);
+        return array($count,$total);
+    }
+    public function signup($value1, $value2, $value3)
     {
-        $image = $value4["name"];
-        $sql = "INSERT INTO `user` (`login`, `Password`, `email`, `TYPEACC`,`userPic`) VALUES ('$value1', '$value2', '$value3', 'user','$image');";
+        $sql = "INSERT INTO `user` (`login`, `Password`, `email`) VALUES ('$value1', '$value2', '$value3');";
         mysqli_query($this->conn, $sql);
     }
 
@@ -64,7 +74,7 @@ class crud extends Database
         $sql = "SELECT * FROM `user`;";
         $result = mysqli_query($this->conn, $sql);
         foreach ($result as $user) {
-            if ($value1 == $user['email'] and $value2 == $user['Password']) {
+            if ($value1 == $user['email'] and password_verify($value2,$user['Password'])) {
                 $_SESSION["email"] = $user['email'];
                 $_SESSION["username"] = $user['login'];
                 $_SESSION["Password"] = $user['Password'];
@@ -76,6 +86,7 @@ class crud extends Database
             }
         }
     }
+    
     public function addtocart($value1, $value2, $value3, $value4, $value5)
     {
         $sql = "INSERT INTO cart (IdPrd, prixtotal, prixunitaire, quantite,client, situation) VALUES ('$value1','$value2', '$value3', '$value4','$value5', 'notdone');";
@@ -132,5 +143,4 @@ class crud extends Database
         $sql = "DELETE FROM commande where id='$value1';";
         mysqli_query($this->conn, $sql);
     }
-
 }

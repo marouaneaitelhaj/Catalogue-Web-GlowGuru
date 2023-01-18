@@ -5,6 +5,7 @@ class NewArrivals extends controller{
         $this->model('Database');
         $read = $this->model('crud');
         $read->productlist();
+        // $dashboard->dashboard();
         $this->viewjs('productlist', ['query' => $read->query]);
     }
 }

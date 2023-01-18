@@ -7,7 +7,7 @@ class editproduct extends controller
         $this->model('Database');
         $details = $this->model('crud');
         $details->details();
-        $this->view('editproduct', ['query' => $read->query,'details' => $details->query]);
+        $this->view('editproduct', ['details' => $details->query]);
         if (isset($_POST['btn'])) {
             $target_dir = "../uploads/";
             $target_file = $target_dir . basename($_FILES["productPic"]["name"]);

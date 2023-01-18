@@ -31,3 +31,17 @@
 
         </div>
     </div>
+    <?php
+    while ($cover = mysqli_fetch_array($data['cover'])) {
+    ?>
+        <div class="w-100 h-50" style="position: relative; text-align: center; color: white;">
+            <img class="w-100 h-100 rounded" style="filter: brightness(50%); object-fit: cover;" src="../uploads/<?= $cover['picProcuct'] ?>" alt="">
+            <div class="centered">
+                <h1 class="text-white"><?= $cover['libelle'] ?></h1>
+                <p class="text-white"><?= $cover['description'] ?></p>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+    

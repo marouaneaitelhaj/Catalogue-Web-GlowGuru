@@ -5,6 +5,8 @@ class tableproduct extends controller{
         $this->model('Database');
         $read = $this->model('crud');
         $read->productlist();
-        $this->viewjs('tableproduct', ['query' => $read->query]);
+        $dashboard = $this->model('crud');
+
+        $this->viewjs('tableproduct', ['query' => $read->query, 'dashboard' => $dashboard->dashboard()]);
     }
 }

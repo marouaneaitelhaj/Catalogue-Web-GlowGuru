@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Sofia');
+@import url('https://fonts.cdnfonts.com/css/univers');
 *{
-    /* font-family: 'Sofia', sans-serif; */
+    font-family: 'Univers', sans-serif;
     color: #E7183B;
 }
 :root {
     --main-color: #FFF1F1;
 }
 .ds{
+    font-family: 'Sofia', sans-serif;
     color: #E7183B;
 }
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 .container{
     text-align: center;
     width: 100%;
@@ -20,6 +28,7 @@
   }
 .card{
     margin: auto;
+    height: 400px;
 }
 .row{
     display: flex;

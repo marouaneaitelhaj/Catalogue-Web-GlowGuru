@@ -23,3 +23,4 @@
         <button type="submit" name="btn" class="btn border">SUBMITE</button>
     </form>
 </div>
+<script src="../app/views/home/main/main.js"></script>

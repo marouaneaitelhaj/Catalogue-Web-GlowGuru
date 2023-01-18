@@ -1,8 +1,11 @@
+<?php
+                            while ($details = mysqli_fetch_array($data['details'])) {
+                            ?>
 <div class="container m-4">
     <div class="container-fluid h-custom bg-light">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-9 col-lg-6 col-xl-5">
-                <img src="../app/views/home/images/two phones.png" class="img-fluid" alt="Sample image">
+                <img src="../uploads/<?= $details['picProcuct'] ?>" class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 m-4 offset-xl-1">
                 <form action="" method="POST" enctype="multipart/form-data">
@@ -11,9 +14,7 @@
 
                     </div>
 
-                    <?php
-                            while ($details = mysqli_fetch_array($data['details'])) {
-                            ?>
+                    
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="form3Example3" value="<?=$details['libelle']?>" name="libelle" class="border form-control form-control-lg" placeholder="Enter a valid email address" />

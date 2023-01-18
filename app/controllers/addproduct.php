@@ -7,12 +7,14 @@ class addproduct extends controller
         $this->view('addproduct');
         if (isset($_POST['btn'])) {
             // for
-            for ($i = 0; $i < count($_FILES['picProcuct'][]);$i++){
-                echo "+";
-            } 
+            for ($i = 0; $i < count($_FILES['picProcuct']["name"]); $i++) {
+                $target_dir = "../uploads/";
+                $target_file = $target_dir . basename($_FILES["picProcuct"]["name"][$i]);
+                move_uploaded_file($_FILES["picProcuct"]["tmp_name"][$i], $target_file);
+            }
             $addproduct = $this->model('crud');
-            $addproduct->addproduct($_POST['libelle'], $_POST['description'], $_POST['price'],$_FILES['picProcuct']);
-            // header('location: ./productlist');
+            $addproduct->addproduct($_POST['libelle'], $_POST['description'], $_POST['price'], $_FILES['picProcuct']);
+            header('location: ./newArrivals');
         }
     }
 }

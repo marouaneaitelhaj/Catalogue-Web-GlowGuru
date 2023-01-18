@@ -5,6 +5,8 @@ class home extends controller{
         $this->model('Database');
         $suggestion = $this->model('crud');
         $suggestion->suggestion();
-        $this->view('index', ['suggestion' => $suggestion->query]);
+        $cover = $this->model('crud');
+        $cover->cover();
+        $this->view('index', ['suggestion' => $suggestion->query, 'cover' => $cover->query]);
     }
 }
