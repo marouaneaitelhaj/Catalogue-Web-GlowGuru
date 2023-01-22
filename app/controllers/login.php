@@ -4,7 +4,7 @@ class login extends controller
     public function __construct()
     {
         $this->view('login');
-        if (!isset($_SESSION['login'])) {
+        if (!isset($_SESSION['email'])) {
             if (isset($_POST['btn'])) {
                 $this->model('Database');
                 $login = $this->model('crud');

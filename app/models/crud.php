@@ -86,9 +86,6 @@ class crud extends Database
                 $_SESSION["email"] = $user['email'];
                 $_SESSION["username"] = $user['login'];
                 $_SESSION["Password"] = $user['Password'];
-                $_SESSION["TYPEACC"] = $user['TYPEACC'];
-                $_SESSION["login"] = 'true';
-                $_SESSION["userPic"] = $user['userPic'];
                 $_SESSION["id"] = $user['id'];
                 header('location: ./');
             }
