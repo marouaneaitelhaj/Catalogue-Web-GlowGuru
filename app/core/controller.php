@@ -14,7 +14,7 @@ class controller
         }
         ob_get_clean();
         ob_start();
-        echo '<script type="text/javascript">document.body.innerHTML = "";</script>';
+        // echo '<script type="text/javascript">document.body.innerHTML = "";</script>';
         require_once '../app/views/home/header.php';
         require_once '../app/views/home/' . $view . '.php';
         require_once '../app/views/home/footer.php';
@@ -26,7 +26,7 @@ class controller
         }
         ob_get_clean();
         ob_start();
-        echo '<script type="text/javascript">document.body.innerHTML = "";</script>';
+        // echo '<script type="text/javascript">document.body.innerHTML = "";</script>';
         require_once '../app/views/home/header.php';
         require_once '../app/views/home/' . $view . '.php';
         require_once '../app/views/home/footer.php';

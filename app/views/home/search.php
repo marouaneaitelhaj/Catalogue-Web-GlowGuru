@@ -1,8 +1,8 @@
 <div class="container" id="container">
     <div class="d-flex justify-content-around flex-wrap">
         <?php
-        if (mysqli_num_rows($data['query']) > 0) {
-            while ($produit = mysqli_fetch_array($data['query'])) {
+        if (mysqli_num_rows($data['search']) > 0) {
+            while ($produit = mysqli_fetch_array($data['search'])) {
         ?>
                 <div class="mt-4">
                     <div class="card" style="width: 18rem;">

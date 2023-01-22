@@ -36,86 +36,86 @@
         </li>
       </ul>
       <!-- Left links -->
-      <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
-    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
-    <i class="fas fa-search" aria-hidden="true"></i>
-</form>
+      <form action="" method="post" class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </form>
     </div>
-    </div>
-    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Collapsible wrapper -->
 
-    <!-- Right elements -->
-    
-    <div class="w-25 justify-content-around d-flex align-items-center">
-      <!-- Icon -->
-      <?php
-      if (!isset($_SESSION["email"])) {
-      ?>
-        <a href="login">
-          <i class="fa fa-sign-in" aria-hidden="true"></i>
-        </a>
-      <?php
-      }
-      ?>
-      <?php
-      if (isset($_SESSION["email"])) {
-      ?>
-        
-        <a href="addproduct">
+  <!-- Right elements -->
+
+  <div class="w-25 justify-content-around d-flex align-items-center">
+    <!-- Icon -->
+    <?php
+    if (!isset($_SESSION["email"])) {
+    ?>
+      <a href="login">
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+      </a>
+    <?php
+    }
+    ?>
+    <?php
+    if (isset($_SESSION["email"])) {
+    ?>
+
+      <a href="addproduct">
         <i class="fas fa-plus-circle"></i>
-        </a>
-        <a href="tableproduct">
+      </a>
+      <a href="tableproduct">
         <i class="fas fa-edit"></i>
-        </a>
+      </a>
+    <?php
+    }
+    ?>
+    <?php
+    if (isset($_SESSION["email"])) {
+    ?>
+
       <?php
-      }
-      ?>
-      <?php
-      if (isset($_SESSION["email"])) {
-      ?>
-        
-        <?php
       if (isset($_GET["id"])) {
       ?>
-          <i class="fas fa-shopping-cart" onclick="toggleShoppingCart()"></i>
-          <?php
-          }
-          ?>
-
+        <i class="fas fa-shopping-cart" onclick="toggleShoppingCart()"></i>
       <?php
       }
       ?>
-      <!-- Avatar -->
-      <?php
-      if (isset($_SESSION["email"])) {
-      ?>
-        <div class="dropdown">
-          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-            <i class="fa fa-user" aria-hidden="true"></i>
 
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-            <li>
-              <a class="dropdown-item" href="profile">My profile</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Settings</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="Logout">Logout</a>
-            </li>
-          </ul>
-        </div>
-      <?php
-      }
-      ?>
-    </div>
-    <!-- Right elements -->
+    <?php
+    }
+    ?>
+    <!-- Avatar -->
+    <?php
+    if (isset($_SESSION["email"])) {
+    ?>
+      <div class="dropdown">
+        <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+          <i class="fa fa-user" aria-hidden="true"></i>
+
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+          <li>
+            <a class="dropdown-item" href="profile">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="Logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    <?php
+    }
+    ?>
+  </div>
+  <!-- Right elements -->
   </div>
   <!-- Container wrapper -->
 </nav>
 
-          
+
 <!-- Navbar -->
 <script>
   function toggleShoppingCart() {

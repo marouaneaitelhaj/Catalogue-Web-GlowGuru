@@ -19,6 +19,13 @@ class crud extends Database
         }
         // var_dump($value1);
     }
+    public function search()
+    {
+        $libelle = $_GET["libelle"];
+        echo $libelle;
+        $this->query = mysqli_query($this->conn, "SELECT * FROM produit WHERE libelle LIKE '%$libelle%'");
+        return $this->query;
+    }
     public function productlist()
     {
         $this->query = mysqli_query($this->conn, "SELECT * FROM produit ORDER BY RAND()");
@@ -56,12 +63,13 @@ class crud extends Database
 
         header('location: ./newArrivals');
     }
-    public function dashboard(){
+    public function dashboard()
+    {
         $sql = 'SELECT COUNT(*) FROM `produit`;';
         $count = mysqli_query($this->conn, $sql);
         $sql = 'SELECT SUM(`Price`) FROM `produit`;';
         $total = mysqli_query($this->conn, $sql);
-        return array($count,$total);
+        return array($count, $total);
     }
     public function signup($value1, $value2, $value3)
     {
@@ -74,7 +82,7 @@ class crud extends Database
         $sql = "SELECT * FROM `user`;";
         $result = mysqli_query($this->conn, $sql);
         foreach ($result as $user) {
-            if ($value1 == $user['email'] and password_verify($value2,$user['Password'])) {
+            if ($value1 == $user['email'] and password_verify($value2, $user['Password'])) {
                 $_SESSION["email"] = $user['email'];
                 $_SESSION["username"] = $user['login'];
                 $_SESSION["Password"] = $user['Password'];
@@ -86,7 +94,7 @@ class crud extends Database
             }
         }
     }
-    
+
     public function addtocart($value1, $value2, $value3, $value4, $value5)
     {
         $sql = "INSERT INTO cart (IdPrd, prixtotal, prixunitaire, quantite,client, situation) VALUES ('$value1','$value2', '$value3', '$value4','$value5', 'notdone');";
