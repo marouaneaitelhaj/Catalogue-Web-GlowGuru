@@ -8,5 +8,6 @@ class home extends controller{
         $cover = $this->model('crud');
         $cover->cover();
         $this->view('index', ['suggestion' => $suggestion->query, 'cover' => $cover->query]);
+        // echo ;
     }
 }

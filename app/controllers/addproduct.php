@@ -3,7 +3,10 @@ class addproduct extends controller
 {
     public function __construct()
     {
-        if (isset($_SESSION["email"])) {
+        session_start();
+        if (!isset($_SESSION["id"])) {
+            header('location: ./');
+        }else{
             $this->model('Database');
             $this->view('addproduct');
             if (isset($_POST['btn'])) {
@@ -17,8 +20,6 @@ class addproduct extends controller
                 $addproduct->addproduct($_POST['libelle'], $_POST['description'], $_POST['price'], $_FILES['picProcuct']);
                 header('location: ./newArrivals');
             }
-        }else{
-            header('location: ./');
         }
     }
 }
