@@ -1,4 +1,4 @@
-<form action="" method="post">
+<form class="row d-flex justify-content-around" action="" method="post">
 
     <div class="shopping-cart container mt-5">
         <div class="row">
@@ -56,7 +56,7 @@
                     <div class="col">
                         <h1 class="m-4"><?= $produit['libelle'] ?></h1>
                         <p class="p-4 pt-0"><?= $produit['description'] ?></p>
-
+        
                         <!-- <button type="submit" name="btn" class="m-4 btn-lg btn-block btn">add to cart</button> -->
 </form>
 </div>
@@ -79,7 +79,8 @@
                     <img class="card-img-top" src="../uploads/<?= $suggestion['picProcuct'] ?>" style="object-fit: cover;height: 180px;" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title"><?= $suggestion['libelle'] ?></h5>
-                        <p class="card-text"><?= $suggestion['description'] ?></p>
+                        <p><?= substr($suggestion['description'], 0, 50); ?>...</p>
+
                         <a href="./details?id=<?= $suggestion['IdPrd'] ?>" class="btn">See Details</a>
                     </div>
                 </div>

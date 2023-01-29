@@ -9,7 +9,7 @@
                         <img class="card-img-top" src="../uploads/<?= $produit['picProcuct'] ?>" style="object-fit: cover;height: 180px;" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><?= $produit['libelle'] ?></h5>
-                            <p class="card-text"><?= $produit['description'] ?></p>
+                            <p><?= substr($produit['description'], 0, 50); ?>...</p>
                             <a href="./details?id=<?= $produit['IdPrd'] ?>" class="btn m-4">See Details</a>
 
                         </div>

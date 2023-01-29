@@ -9,15 +9,13 @@ class crud extends Database
     public $query;
     public function addproduct($value1, $value3, $value4, $value8)
     {
-        // echo $value1;
-        // print_r($value1);
         for ($i = 0; $i < count($value3); $i++) {
             $image = $value8["name"][$i];
             $sql = "INSERT INTO produit (libelle, description,Price,picProcuct) VALUES
         ('$value1[$i]','$value3[$i]','$value4[$i]','$image');";
             mysqli_query($this->conn, $sql);
+            var_dump($sql);
         }
-        // var_dump($value1);
     }
     public function search()
     {
@@ -87,7 +85,7 @@ class crud extends Database
                 $_SESSION["username"] = $user['login'];
                 $_SESSION["Password"] = $user['Password'];
                 $_SESSION["id"] = $user['id'];
-                // header('location: ./');
+                header('location: ./');
                 
             }
         }

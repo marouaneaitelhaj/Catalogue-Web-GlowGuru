@@ -28,7 +28,7 @@
   }
 .card{
     margin: auto;
-    height: 400px;
+    height: 500px;
 }
 .row{
     display: flex;
@@ -63,7 +63,8 @@ i{
         display: none;
     }
     body > div > div.row.align-items-center > div:nth-child(2){
-        margin: 100px;
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
 }
 #hiddendiv{

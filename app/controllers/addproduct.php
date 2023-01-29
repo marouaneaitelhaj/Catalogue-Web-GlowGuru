@@ -10,7 +10,6 @@ class addproduct extends controller
             $this->model('Database');
             $this->view('addproduct');
             if (isset($_POST['btn'])) {
-                // for
                 for ($i = 0; $i < count($_FILES['picProcuct']["name"]); $i++) {
                     $target_dir = "../uploads/";
                     $target_file = $target_dir . basename($_FILES["picProcuct"]["name"][$i]);

@@ -23,8 +23,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-2 mt-lg-0" href="#">
-        <span class="wi">Wi</span>
-        <span class="wi">Electro</span>
+        <span class="wi">GlowGuru</span>
       </a>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -38,15 +37,9 @@
       <!-- Left links -->
       <form action="" method="post" class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
         <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
-        <i class="fas fa-search" aria-hidden="true"></i>
       </form>
     </div>
-  </div>
-  <!-- Collapsible wrapper -->
-
-  <!-- Right elements -->
-
-  <div class="w-25 justify-content-around d-flex align-items-center">
+    <div class="w-25 justify-content-around d-flex align-items-center">
     <!-- Icon -->
     <?php
     if (!isset($_SESSION["email"])) {
@@ -110,6 +103,12 @@
     }
     ?>
   </div>
+  </div>
+  <!-- Collapsible wrapper -->
+
+  <!-- Right elements -->
+
+  
   <!-- Right elements -->
   </div>
   <!-- Container wrapper -->

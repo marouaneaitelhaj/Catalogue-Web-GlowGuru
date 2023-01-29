@@ -9,7 +9,6 @@ document.querySelector("#navbarSupportedContent > form > input").addEventListene
     // console.log(document.querySelector("#navbarSupportedContent > form > input").value);
     $.ajax({
         url: "./search?libelle=" + document.querySelector("#navbarSupportedContent > form > input").value,
-        type: "POST",
         beforeSend:function () {
             document.querySelectorAll(".container")[0].innerHTML = '<div class="spinner-border" role="status"> <span class="sr-only">Loading...</span> </div>';
         },
@@ -21,4 +20,8 @@ document.querySelector("#navbarSupportedContent > form > input").addEventListene
         }
     })
 })
-
+var arr = [1,2,3,4,5];
+for(var i = 0; i<arr.length;i + 2){
+    console.log(arr[i]);
+}
+//use

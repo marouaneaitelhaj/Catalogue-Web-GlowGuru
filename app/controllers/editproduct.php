@@ -3,6 +3,7 @@ class editproduct extends controller
 {
     public function __construct()
     {
+        session_start();
         if (isset($_SESSION["email"])) {
             $this->model('Database');
             $this->model('Database');

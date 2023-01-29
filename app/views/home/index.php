@@ -5,9 +5,7 @@
             <img class="w-75" src="../app/views/home/images/Flash Sale.png">
         </div>
         <div class="col">
-            <h1>
                 <span class="ds display-1">WICOS</span>
-            </h1>
         </div>
     </div>
     <div class="container">
@@ -34,7 +32,7 @@
     <?php
     while ($cover = mysqli_fetch_array($data['cover'])) {
     ?>
-        <div class="w-100 h-50" style="position: relative; text-align: center; color: white;">
+        <div class="w-100 h-50 mt-4" style="position: relative; text-align: center; color: white;">
             <img class="w-100 h-100 rounded" style="filter: brightness(50%); object-fit: cover;" src="../uploads/<?= $cover['picProcuct'] ?>" alt="">
             <div class="centered">
                 <h1 class="text-white"><?= $cover['libelle'] ?></h1>
